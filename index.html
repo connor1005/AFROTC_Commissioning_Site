@@ -208,6 +208,45 @@
             font-size: 0.9rem;
 	    border-top: 1px solid #e5e7eb;
         }
+	/* ==========================================
+           MOBILE RESPONSIVENESS FIXES
+        ========================================== */
+        @media (max-width: 768px) {
+            /* Shrink the giant header text */
+            h1 {
+                font-size: 2rem;
+                margin-top: 20px;
+            }
+            
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            /* Make sure the header has enough breathing room on small screens */
+            header {
+                height: auto;
+                min-height: 80vh;
+                padding: 6rem 15px 3rem 15px; 
+            }
+
+            /* Fix the navigation bar so links don't squish together */
+            nav {
+                flex-direction: column;
+                text-align: center;
+                padding: 0.8rem;
+            }
+
+            .nav-brand {
+                margin-bottom: 10px;
+            }
+
+            nav a {
+                margin-left: 10px;
+                margin-right: 10px;
+                font-size: 0.8rem;
+                display: inline-block;
+            }
+        }
     </style>
 </head>
 <body>
