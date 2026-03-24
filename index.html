@@ -68,9 +68,9 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(rgba(10, 17, 40, 0.85), rgba(0, 48, 143, 0.85)), url('placeholder-campus-image.jpg') center/cover;
+            background: linear-gradient(rgba(10, 17, 40, 0.85), rgba(0, 48, 143, 0.85)), url('images/snake_eyes_five.png') center/cover;
             padding: 0 20px;
-            margin-top: 60px; /* Offset for fixed nav */
+            margin-top: 60px;
         }
 
         h1 {
@@ -188,7 +188,18 @@
         .btn:hover {
             background-color: var(--af-dark);
         }
+	.footer-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            margin-bottom: 1.5rem;
+        }
 
+        .footer-logos img {
+            height: 80px;
+            width: auto;
+        }
         footer {
             text-align: center;
             padding: 2rem;
@@ -289,3 +300,10 @@
 	</div>
 </section>
 
+<footer>
+        <div class="footer-logos">
+            <img src="images/af_logo.png" alt="United States Air Force Logo">
+            <img src="images/sf_logo.png" alt="United States Space Force Logo">
+        </div>
+        <p>Air Force ROTC Detachment 115 | Snake Eyes Five</p>
+    </footer>
