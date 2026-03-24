@@ -247,6 +247,31 @@
                 display: inline-block;
             }
         }
+	/* Personnel Flex Grid */
+        .personnel-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .personnel-grid .card {
+            flex: 1 1 250px; /* Tells the cards to size evenly */
+            max-width: 300px; /* Stops them from stretching too far */
+        }
+
+        /* Profile Images */
+        .profile-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%; /* Makes the image a perfect circle */
+            object-fit: cover;
+            border: 3px solid var(--af-blue);
+            margin: 0 auto 15px auto;
+            display: block;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body>
@@ -301,37 +326,47 @@
         <div class="section-header">
             <h3>Official Party</h3>
         </div>
-        <div class="grid-3">
-		<div class="card" style="text-align: center;">
+        
+        <div class="personnel-grid">
+            <div class="card" style="text-align: center;">
+                <img src="images/placeholder.jpg" alt="Brigadier General Robert Bogart" class="profile-img">
                 <h4 style="color: var(--af-blue); margin-bottom: 5px;">Presiding Officer</h4>
-                <p><strong>Brigadier General Robert Bogart</strong></p>
+                <p><strong>Brig. Gen. Robert Bogart</strong></p>
             </div>
-
             <div class="card" style="text-align: center;">
+                <img src="images/placeholder.jpg" alt="Lieutenant Colonel Sean Stumpf" class="profile-img">
                 <h4 style="color: var(--af-blue); margin-bottom: 5px;">Detachment Commander</h4>
-                <p><strong>Lieutenant Colonel Sean Stumpf</strong></p>
+                <p><strong>Lt. Col. Sean Stumpf</strong></p>
             </div>
             <div class="card" style="text-align: center;">
+                <img src="images/placeholder.jpg" alt="Major Joshua Cruzan" class="profile-img">
                 <h4 style="color: var(--af-blue); margin-bottom: 5px;">Operations Officer</h4>
-                <p><strong>Major Joshua Cruzan</strong></p>
+                <p><strong>Maj. Joshua Cruzan</strong></p>
             </div>
             <div class="card" style="text-align: center;">
+                <img src="images/placeholder.jpg" alt="Captain James Irby" class="profile-img">
                 <h4 style="color: var(--af-blue); margin-bottom: 5px;">Recruiting Officer</h4>
-                <p><strong>Captain James Irby</strong></p>
+                <p><strong>Capt. James Irby</strong></p>
             </div>
         </div>
 
-	 <div class="section-header">
+        <div class="section-header">
             <h3>Distinguished Guests</h3>
         </div>
-	<div class="card" style="text-align: center;">
-                <h4 style="color: var(--af-blue); margin-bottom: 5px;">Officer Accessions Instructor</h4>
-                <p><strong>Technical Sergeant Andrew Bean</strong></p>
+        
+        <div class="personnel-grid">
+            <div class="card" style="text-align: center;">
+                <img src="images/placeholder.jpg" alt="Technical Sergeant Andrew Bean" class="profile-img">
+                <h4 style="color: var(--af-blue); margin-bottom: 5px;">Officer Accessions</h4>
+                <p><strong>TSgt Andrew Bean</strong></p>
             </div>
-	<div class="card" style="text-align: center;">
+            <div class="card" style="text-align: center;">
+                <img src="images/placeholder.jpg" alt="Technical Sergeant Tazesha Politz" class="profile-img">
                 <h4 style="color: var(--af-blue); margin-bottom: 5px;">Personnelist</h4>
-                <p><strong>Technical Sergeant Tazesha Politz</strong></p>
+                <p><strong>TSgt Tazesha Politz</strong></p>
             </div>
+        </div>
+
     </section>
 
     <section id="speaker">
