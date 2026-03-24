@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detachment 115 Commissioning Ceremony</title>
+    <style>
+        /* CSS Reset & Variables */
+        :root {
+            --af-blue: #00308F;
+            --af-dark: #0A1128;
+            --af-silver: #C0C0C0;
+            --text-main: #333333;
+            --bg-light: #F3F4F6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--af-dark);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .nav-brand {
+            font-weight: bold; 
+            color: var(--af-silver);
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--af-silver);
+        }
+
+        /* Hero Section */
+        header {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(10, 17, 40, 0.85), rgba(0, 48, 143, 0.85)), url('placeholder-campus-image.jpg') center/cover;
+            padding: 0 20px;
+            margin-top: 60px; /* Offset for fixed nav */
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--af-silver);
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .hero-details {
+            color: #ffffff;
+            font-size: 1.2rem;
+            border-top: 1px solid var(--af-silver);
+            padding-top: 20px;
+        }
+
+        /* Content Sections */
+        section {
+            padding: 5rem 10%;
+        }
+
+        .bg-gray {
+            background-color: var(--bg-light);
+        }
+
+        h3 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: var(--af-dark);
+            text-align: center;
+            text-transform: uppercase;
+            border-bottom: 3px solid var(--af-blue);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        /* Grids */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--af-blue);
+        }
+
+        /* Roster Grid */
+        .roster-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        .cadet-card {
+            background-color: #ffffff;
+            padding: 1.5rem;
+            border-radius: 4px;
+            border: 1px solid #e5e7eb;
+            transition: transform 0.2s;
+        }
+
+        .cadet-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        .cadet-name {
+            font-weight: bold;
+            color: var(--af-dark);
+            margin-top: 10px;
+        }
+
+        .cadet-branch {
+            color: #6B7280;
+            font-size: 0.9rem;
+        }
+
+        /* RSVP Button */
+        .btn-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--af-blue);
+            color: #ffffff;
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--af-dark);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--af-dark);
+            color: var(--af-silver);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-brand">AFROTC DET 115</div>
+        <div>
+            <a href="#details">Details</a>
+            <a href="#schedule">Schedule</a>
+            <a href="#class">The Class</a>
+            <a href="#rsvp">RSVP</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Air Force ROTC Detachment 115</h1>
+        <h2>Commissioning Ceremony</h2>
+        <div class="hero-details">
+            <p>University of Connecticut</p>
+            <p>Spring 2026</p>
+        </div>
+    </header>
+
+    <section id="details">
+        <div class="section-header">
+            <h3>Event Information</h3>
+        </div>
+        <div class="grid-3">
+            <div class="card">
+                <h4 style="color: var(--af-blue); margin-bottom: 10px;">Location</h4>
+                <p><strong>University of Connecticut</strong></p>
+                <p>[Building Name / Auditorium]</p>
+                <p>Storrs, CT 06269</p>
+            </div>
+            <div class="card">
+                <h4 style="color: var(--af-blue); margin-bottom: 10px;">Dress Code</h4>
+                <p><strong>Military:</strong> Service Dress</p>
+                <p><strong>Civilian:</strong> Business Casual / Sunday Best</p>
+            </div>
+            <div class="card">
+                <h4 style="color: var(--af-blue); margin-bottom: 10px;">Parking & Arrival</h4>
+                <p>Guests are encouraged to park in the [North/South] Garage. Please plan to arrive 30 minutes prior to the start time to secure seating.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="class" class="bg-gray">
+        <div class="section-header">
+            <h3>Meet the Commissionees</h3>
+            <p style="color: #6B7280; margin-top: 10px;">Presenting the next generation of Air Force and Space Force Officers.</p>
+        </div>
+        
+        <div class="roster-grid">
+            <div class="cadet-card">
+                <div class="cadet-name">Jane Doe</div>
+                <div class="cadet-branch">United States Air Force</div>
+                <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Cybersecurity</div>
+            </div>
+            <div class="cadet-card">
+                <div class="cadet-name">John Smith</div>
+                <div class="cadet-branch">United States Space Force</div>
+                <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Space Operations</div>
+            </div>
+             <div class="cadet-card">
+                <div class="cadet-name">Connor Ingram</div>
+                <div class="cadet-branch">United States Space Force</div>
+                <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Computer Science</div>
+            </div>
+             <div class="cadet-card">
+                <div class="cadet-name">Alice Johnson</div>
+                <div class="cadet-branch">United States Air Force</div>
+                <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Pilot</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule">
+        <div class="section-header">
+            <h3>Schedule of Events</h3>
+        </div>
+        <div class="card" style="max-width: 800px; margin: 0 auto;">
+            <ul style="list-style-type: none; padding-left: 20px;">
+                <li style="margin-bottom: 15px;"><strong>10:00 AM</strong> - Guest Arrival & Seating</li>
+                <li style="margin-bottom: 15px;"><strong>10:30 AM</strong> - Arrival of the Official Party & National Anthem</li>
+                <li style="margin-bottom: 15px;"><strong>10:45 AM</strong> - Guest Speaker Address</li>
+                <li style="margin-bottom: 15px;"><strong>11:15 AM</strong> - Oath of Office Administration</li>
+                <li style="margin-bottom: 15px;"><strong>11:30 AM</strong> - Pinning of Ranks & The First Salute</li>
+                <li><strong>12:30 PM</strong> - Conclusion & Reception</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="rsvp" class="bg-gray">
+        <div class="section-header">
+            <h3>RSVP</h3>
+            <p>Please let us know if you will be attending by [Deadline Date].</p>
+        </div>
+        <div class="btn-container">
+            <a href="[YOUR_GOOGLE_FORM_LINK_HERE]" class="btn" target="_blank">Complete RSVP Form</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>Air Force ROTC Detachment 115 | University of Connecticut</p>
+    </footer>
+
+</body>
+</html>
