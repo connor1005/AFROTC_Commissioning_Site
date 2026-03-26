@@ -3,7 +3,7 @@
 A responsive, static single-page application (SPA) built to serve as the official digital program and RSVP portal for the 2026 Air Force and Space Force commissioning ceremony.
 
 ## Overview
-This project digitizes the traditional commissioning program, providing families, military personnel, and distinguished guests with an accessible, mobile-friendly guide to the event. It features an interactive order of events, a breakdown of military traditions (Oath of Office, The First Salute), a dynamic grid of the commissioning class, and an integrated Microsoft Forms RSVP portal.
+This project digitizes the traditional commissioning program, providing families, military personnel, and distinguished guests with an accessible, mobile-friendly guide to the event. It features an interactive order of events, a breakdown of military traditions (Oath of Office, The First Salute), a dynamic grid of the commissioning class, and an integrated Donation link to support the program.
 
 ## Technical Features
 * **Responsive Web Design:** Utilizes CSS Grid and Flexbox to ensure a seamless layout across desktop, tablet, and mobile devices.
