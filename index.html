@@ -143,29 +143,71 @@
             text-align: center;
         }
 
+	/* Modified Cadet Card for 3D Flip */
         .cadet-card {
-            background-color: #ffffff;
-            padding: 1.5rem;
-            border-radius: 4px;
-            border: 1px solid #e5e7eb;
-            transition: transform 0.2s;
+            background-color: transparent;
+            perspective: 1000px; /* Creates the 3D space */
+            cursor: pointer;
+            height: 280px; /* Keeps the card height consistent when flipping */
+            border: none;
         }
 
-        .cadet-card:hover {
+        .cadet-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        /* The class that triggers the flip */
+        .cadet-card.is-flipped .cadet-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .cadet-card-front, .cadet-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden; /* Hides the back when facing away */
+            backface-visibility: hidden;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.2s; /* For the hover bounce */
+        }
+
+        .cadet-card-front {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            padding: 1.5rem;
+        }
+
+        /* Keep your existing hover effect on the front card */
+        .cadet-card:hover .cadet-card-front {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px rgba(0,0,0,0.1);
         }
 
-        .cadet-name {
-            font-weight: bold;
-            color: var(--af-dark);
-            margin-top: 10px;
+        /* Styling for the back of the card */
+        .cadet-card-back {
+            background-color: var(--af-dark); /* Using your existing dark blue variable */
+            color: #ffffff;
+            transform: rotateY(180deg);
+            border: 2px solid var(--af-blue);
+            padding: 1.5rem;
         }
 
-        .cadet-branch {
-            color: #6B7280;
-            font-size: 0.9rem;
+        .quote-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.5;
         }
+
 
         /* RSVP Button */
         .btn-container {
@@ -439,97 +481,187 @@ Lt. Gen. Healy was commissioned through the ROTC program at the University of Co
         </div>
 
         <div class="roster-grid">
-            <div class="cadet-card" style="text-align: center;">
-                <img src="images/flag.JPG" alt="Alexander Brydon" class="profile-img">
-                <div class="cadet-name">Alexander Brydon</div>
-                <div class="cadet-branch">United States Air Force</div>
-                <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Air Battle Manager</div>
+           <div class="cadet-card" onclick="this.classList.toggle('is-flipped')">
+                <div class="cadet-card-inner">
+                    <div class="cadet-card-front">
+                        <img src="images/brydon.png" alt="Alexander Brydon" class="profile-img">
+                        <div class="cadet-name">Alexander Brydon</div>
+                        <div class="cadet-branch">United States Air Force</div>
+                        <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Air Battle Manager</div>
+                    </div>
+                    <div class="cadet-card-back">
+                        <p class="quote-text">"Aim High... Fly-Fight-Win."</p>
+                    </div>
+                </div>
             </div>
-            
-            <div class="cadet-card" style="text-align: center;">
-                <img src="images/chiu-skow.png" alt="Jason Chiu-Skow" class="profile-img">
-                <div class="cadet-name">Jason Chiu-Skow</div>
-                <div class="cadet-branch">United States Air Force</div>
-                <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Acquisitions</div>
+		
+	    <div class="cadet-card" onclick="this.classList.toggle('is-flipped')">
+                <div class="cadet-card-inner">
+                    <div class="cadet-card-front">
+                        <img src="images/chiu-skow.png" alt="Alexander Brydon" class="profile-img">
+                        <div class="cadet-name">Jason Chiu-Skow</div>
+                        <div class="cadet-branch">United States Air Force</div>
+                        <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Acquisitions</div>
+                    </div>
+                    <div class="cadet-card-back">
+                        <p class="quote-text">"Aim High... Fly-Fight-Win."</p>
+                    </div>
+                </div>
             </div>
-            
-             <div class="cadet-card" style="text-align: center;">
-                <img src="images/close.png" alt="Griffin Close" class="profile-img">
-                <div class="cadet-name">Griffin Close</div>
-                <div class="cadet-branch">United States Space Force</div>
-                <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Developmental Engineering</div>
-            </div>
-            
-            <div class="cadet-card" style="text-align: center;">
-                <img src="images/croteau.png" alt="Amanda Croteau" class="profile-img">
-                <div class="cadet-name">Amanda Croteau</div>
-                <div class="cadet-branch">United States Air Force</div>
-                <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Combat Systems Officer</div>
-            </div>
-            
-            <div class="cadet-card" style="text-align: center;">
-                <img src="images/gleizer.png" alt="Gregory Gleizer" class="profile-img">
-                <div class="cadet-name">Gregory Gleizer</div>
-                <div class="cadet-branch">United States Air Force</div>
-                <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Pilot</div>
-            </div>
-
-            <div class="cadet-card" style="text-align: center;">
-                <img src="images/dolan.png" alt="Aidan Dolan" class="profile-img">
-                <div class="cadet-name">Aidan Dolan</div>
-                <div class="cadet-branch">United States Air Force</div>
-                <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Logistics Readiness Officer</div>
-            </div>
-            
-            <div class="cadet-card" style="text-align: center;">
-                <img src="images/hurwitz.png" alt="Zachary Hurwitz" class="profile-img">
-                <div class="cadet-name">Zachary Hurwitz</div>
-                <div class="cadet-branch">United States Air Force</div>
-                <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Pilot</div>
-            </div>
-            
-             <div class="cadet-card" style="text-align: center;">
-                <img src="images/khambholja.png" alt="Priya Khambholja" class="profile-img">
-                <div class="cadet-name">Priya Khambholja</div>
-                <div class="cadet-branch">United States Air Force</div>
-                <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Developmental Engineering</div>
-            </div>
-            
-            <div class="cadet-card" style="text-align: center;">
-                <img src="images/melzen.png" alt="Edward Melzen" class="profile-img">
-                <div class="cadet-name">Edward Melzen</div>
-                <div class="cadet-branch">United States Air Force</div>
-                <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Civil Engineer</div>
-            </div>
-            
-            <div class="cadet-card" style="text-align: center;">
-                <img src="images/reilly.png" alt="Aydan Reilly" class="profile-img">
-                <div class="cadet-name">Aydan Reilly</div>
-                <div class="cadet-branch">United States Air Force</div>
-                <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Civil Engineer</div>
+           
+	    <div class="cadet-card" onclick="this.classList.toggle('is-flipped')">
+                <div class="cadet-card-inner">
+                    <div class="cadet-card-front">
+                        <img src="images/close.png" alt="Alexander Brydon" class="profile-img">
+                        <div class="cadet-name">Griffin Close</div>
+                        <div class="cadet-branch">United States Space Force</div>
+                        <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Developmental Engineering</div>
+                    </div>
+                    <div class="cadet-card-back">
+                        <p class="quote-text">"Aim High... Fly-Fight-Win."</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="cadet-card" style="text-align: center;">
-                <img src="images/flag.JPG" alt="Alex Sauer" class="profile-img">
-                <div class="cadet-name">Alex Sauer</div>
-                <div class="cadet-branch">United States Air Force</div>
-                <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Acquisitions</div>
-            </div>
-
-            <div class="cadet-card" style="text-align: center;">
-                <img src="images/schmitt.png" alt="Robert Schmitt" class="profile-img">
-                <div class="cadet-name">Robert Schmitt</div>
-                <div class="cadet-branch">United States Air Force</div>
-                <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Pilot</div>
-            </div>
-
-            <div class="cadet-card" style="text-align: center;">
-                <img src="images/flag.PNG" alt="Lauren Zicca" class="profile-img">
-                <div class="cadet-name">Lauren Zicca</div>
-                <div class="cadet-branch">United States Air Force</div>
-                <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Nurse</div>
+	    <div class="cadet-card" onclick="this.classList.toggle('is-flipped')">
+                <div class="cadet-card-inner">
+                    <div class="cadet-card-front">
+                        <img src="images/croteau.png" alt="Alexander Brydon" class="profile-img">
+                        <div class="cadet-name">Amanda Croteau</div>
+                        <div class="cadet-branch">United States Air Force</div>
+                        <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Combat Systems Officer</div>
+                    </div>
+                    <div class="cadet-card-back">
+                        <p class="quote-text">"Aim High... Fly-Fight-Win."</p>
+                    </div>
+                </div>
             </div>
             
+            <div class="cadet-card" onclick="this.classList.toggle('is-flipped')">
+                <div class="cadet-card-inner">
+                    <div class="cadet-card-front">
+                        <img src="images/gleizer.png" alt="Alexander Brydon" class="profile-img">
+                        <div class="cadet-name">Gregory Gleizer</div>
+                        <div class="cadet-branch">United States Air Force</div>
+                        <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Pilot</div>
+                    </div>
+                    <div class="cadet-card-back">
+                        <p class="quote-text">"Aim High... Fly-Fight-Win."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cadet-card" onclick="this.classList.toggle('is-flipped')">
+                <div class="cadet-card-inner">
+                    <div class="cadet-card-front">
+                        <img src="images/dolan.png" alt="Alexander Brydon" class="profile-img">
+                        <div class="cadet-name">Aidan Dolan</div>
+                        <div class="cadet-branch">United States Air Force</div>
+                        <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Logistics Readiness Officer</div>
+                    </div>
+                    <div class="cadet-card-back">
+                        <p class="quote-text">"Aim High... Fly-Fight-Win."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cadet-card" onclick="this.classList.toggle('is-flipped')">
+                <div class="cadet-card-inner">
+                    <div class="cadet-card-front">
+                        <img src="images/hurwitz.png" alt="Alexander Brydon" class="profile-img">
+                        <div class="cadet-name">Zachary Hurwitz</div>
+                        <div class="cadet-branch">United States Air Force</div>
+                        <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Pilot</div>
+                    </div>
+                    <div class="cadet-card-back">
+                        <p class="quote-text">"Aim High... Fly-Fight-Win."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cadet-card" onclick="this.classList.toggle('is-flipped')">
+                <div class="cadet-card-inner">
+                    <div class="cadet-card-front">
+                        <img src="images/khambholja.png" alt="Alexander Brydon" class="profile-img">
+                        <div class="cadet-name">Priya Khambholja</div>
+                        <div class="cadet-branch">United States Air Force</div>
+                        <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Developmental Engineering</div>
+                    </div>
+                    <div class="cadet-card-back">
+                        <p class="quote-text">"Aim High... Fly-Fight-Win."</p>
+                    </div>
+                </div>
+            </div>
+
+	    <div class="cadet-card" onclick="this.classList.toggle('is-flipped')">
+                <div class="cadet-card-inner">
+                    <div class="cadet-card-front">
+                        <img src="images/melzen.png" alt="Alexander Brydon" class="profile-img">
+                        <div class="cadet-name">Edward Melzen</div>
+                        <div class="cadet-branch">United States Air Force</div>
+                        <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Civil Engineer</div>
+                    </div>
+                    <div class="cadet-card-back">
+                        <p class="quote-text">"Aim High... Fly-Fight-Win."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cadet-card" onclick="this.classList.toggle('is-flipped')">
+                <div class="cadet-card-inner">
+                    <div class="cadet-card-front">
+                        <img src="images/reilly.png" alt="Alexander Brydon" class="profile-img">
+                        <div class="cadet-name">Aydan Reilly</div>
+                        <div class="cadet-branch">United States Air Force</div>
+                        <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Civil Engineer</div>
+                    </div>
+                    <div class="cadet-card-back">
+                        <p class="quote-text">"Aim High... Fly-Fight-Win."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cadet-card" onclick="this.classList.toggle('is-flipped')">
+                <div class="cadet-card-inner">
+                    <div class="cadet-card-front">
+                        <img src="images/sauer.png" alt="Alexander Brydon" class="profile-img">
+                        <div class="cadet-name">Alex Sauer</div>
+                        <div class="cadet-branch">United States Air Force</div>
+                        <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Acquisitions</div>
+                    </div>
+                    <div class="cadet-card-back">
+                        <p class="quote-text">"Aim High... Fly-Fight-Win."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cadet-card" onclick="this.classList.toggle('is-flipped')">
+                <div class="cadet-card-inner">
+                    <div class="cadet-card-front">
+                        <img src="images/schmitt.png" alt="Alexander Brydon" class="profile-img">
+                        <div class="cadet-name">Robert Schmitt</div>
+                        <div class="cadet-branch">United States Air Force</div>
+                        <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Pilot</div>
+                    </div>
+                    <div class="cadet-card-back">
+                        <p class="quote-text">"Aim High... Fly-Fight-Win."</p>
+                    </div>
+                </div>
+            </div>
+            
+	    <div class="cadet-card" onclick="this.classList.toggle('is-flipped')">
+                <div class="cadet-card-inner">
+                    <div class="cadet-card-front">
+                        <img src="images/zicca.png" alt="Alexander Brydon" class="profile-img">
+                        <div class="cadet-name">Lauren Zicca</div>
+                        <div class="cadet-branch">United States Air Force</div>
+                        <div class="cadet-branch" style="font-size: 0.8rem; margin-top: 5px;">Nurse</div>
+                    </div>
+                    <div class="cadet-card-back">
+                        <p class="quote-text">"Aim High... Fly-Fight-Win."</p>
+                    </div>
+                </div>
+            </div>            
         </div>
     </section>
 
