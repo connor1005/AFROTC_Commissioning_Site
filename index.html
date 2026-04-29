@@ -300,15 +300,14 @@
         /* Personnel Flex Grid */
         .personnel-grid {
             display: flex;
-            flex-wrap: wrap;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
             justify-content: center;
             gap: 2rem;
             margin-bottom: 3rem;
         }
 
-        .personnel-grid .card {
-            flex: 1 1 250px; 
-            max-width: 300px; 
+        .personnel-grid .card { 
+            max-width: 100%; 
         }
 
         /* Profile Images */
