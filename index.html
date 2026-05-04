@@ -262,7 +262,9 @@
             border-top: 1px solid #e5e7eb;
         }
 
-        /* MOBILE RESPONSIVENESS FIXES */
+        /* ==========================================
+           MOBILE RESPONSIVENESS FIXES
+        ========================================== */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
@@ -295,19 +297,25 @@
                 font-size: 0.8rem;
                 display: inline-block;
             }
-        }
 
-        /* Personnel Flex Grid */
-        .personnel-grid {
-            display: flex;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
+            /* --- NEW MOBILE FIXES BELOW --- */
+            
+            /* Shrinks the massive empty margins on phone screens */
+            section {
+                padding: 3rem 5%; 
+            }
 
-        .personnel-grid .card { 
-            max-width: 100%; 
+            /* Forces the Cadre cards to stack perfectly in one column */
+            .personnel-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            /* Ensures the cards don't stretch too far or shrink too small */
+            .personnel-grid .card {
+                width: 100%;
+                max-width: 320px;
+            }
         }
 
         /* Profile Images */
